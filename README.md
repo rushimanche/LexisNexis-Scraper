@@ -1,28 +1,22 @@
-# Lexis Nexis Scraper
+# Lexis Nexis Web Scraper
+
+## Overview
+
+This repository hosts a Python package that enables automated scraping from the Lexis Nexis web service. 
+
+This package was designed to address the shortcomings of existing options, which are either obsolete, inefficient, require API access, or lack sufficient customization options. Presently, this package is tailored for academic users, but it can easily be modified to accommodate regular and organizational users. 
 
 
-## Description
+## Prerequisites
 
-This repository contains a python package for the automated scraping of the Lexis Nexis web service. 
-
-Why use this package/code? There are a small collection of alternative options available however these codesets are either outdated, inefficient, require access to the official API, or are not suitably customisable. These reasons led to the development of this package.  
-
-Currently, this package only works for academic users but the functionality can easily be expanded to regular and organisational users. Please let us know if you want these features incorporated! This can quickly and easily (hopefully) be done. The only reason it hasn’t been completed is because we have no way of testing it!
-
-Whilst our best efforts have been made to ensure that the package is robust, as with any web scraping tasks connection drop outs, delays in obtaining pages may cause issues. Likewise, if the website structure changes we endeavour to do our best to update the package as soon as an issue is raised. 
-
-> **_DISCLAIMER:_** This code was developed for academic purposes. Using this software package may be a violation of the terms of use set out by LexisNexis. By downloading and using this package you do so at your own legal risk.
-
-## Requirements
-
-- Lexis Nexis Subscription (API Access Not Required)
+- Lexis Nexis Subscription (API Access Not Necessary)
 - Python 3
 - Chrome Driver
-  - Used to simulate a real web browser.
-  - Available to download at: https://chromedriver.chromium.org/downloads
-- Access to MySQL Database (Optional)
+  - This tool mimics an actual web browser.
+  - It can be downloaded from: https://chromedriver.chromium.org/downloads
+- MySQL Database Access (Optional)
 
-## Installation
+## How to Install
 
 ### Using PIP
 
@@ -30,35 +24,25 @@ Whilst our best efforts have been made to ensure that the package is robust, as 
 
 ### Manual Installation
 
-## Usage
+## How to Use
 
-### Credentials File
-The `credentials.json` file is a template for your specific authentication details. It is a quick and convenient way to store and utilise credentials as it can be edited in any text editor.
-1. Open the `credentials.json` file and replace changemeUsername and changemePassword with your academic login details. 
-2. Save the file. 
+### Credential File Setup
+The `credentials.json` file serves as a placeholder for your unique login details. It provides a simple and convenient method for storing and using credentials as it can be modified in any text editor. You simply need to replace the placeholder username and password with your academic login information and save the file. 
 
-### Authentication Setup
-This bot automatically completes the authentication information for an academic sign-in at regular intervals. In order to do this you need to get your institution login link.  
+### Login Automation
+This package is designed to automate the academic sign-in process at regular intervals. To enable this feature, you'll need your institution's login link.
 
-1. Access the Nexis Service by visiting https://nexis.com
-2. Click on the academic sign in link. 
-3. Find your institution and click “copy link”. 
-4. Copy the link within the pop-up box and paste it into the `credentials.json` file replacing changemeAuthURL.
+1. Visit https://nexis.com to access the Nexis Service.
+2. Select the academic sign-in link. 
+3. Locate your institution and select “copy link”. 
+4. Paste the copied link into the `credentials.json` file in place of the placeholder URL.
 5. Save the file. 
 
-Whilst the pre-configured options will work in the majority of cases you may need to adjust the following options to ensure that the correct authentication fields are completed.
+The default options will suit most use cases. However, you may need to tweak a few settings to ensure the correct fields are populated for authentication.
 
-5. Click the link. 
-6. Right Click on the username field and click inspect. Repeat. 
-7. If the id=‘username’ do nothing. Else save the id value for later. 
-8. Now repeat step 6 for the password field.
-9. If the id=‘password’do nothing. Else save the id value for later.
+### Storage Selection
 
-### Credentials File
-
-### Storage Option
-
-The data can either be saved into either a mySQL database or a pandas dataframe. These need to be setup, as follows, before the webscraping can be initiated. 
+Data can be stored in either a MySQL database or a pandas dataframe. You will need to set up these options before initiating the web scraping process. 
 
 #### MySQL (Recommended)
 
@@ -72,14 +56,7 @@ from lnscraper import mysql_version, authentication
 from lnscraper import pandas_version, authentication
 ```
 
-### Search Terms and Sources
+### Input Search Terms and Sources
 
-### Running the WebScraper
+### Launching the WebScraper
 
-
-## Citing This Package
-Please accredit this package by citing the following in your references. 
-
-```
-@phdthesis{hammocks_2019, title={Identifying Weak Signals of Future Change: Detecting and Analysing Trends in Modus Operandi Through Topic Modelling}, author={Hammocks, Daniel}, year={2019}}
-```
